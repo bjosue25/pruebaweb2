@@ -45,15 +45,9 @@ app.post('/', (req,res)=>{
       });
   })
 
-  app.get('/consulta', (req, res)=>{
-        Gasolinera.find({},(err, docs)=>{
-              res.send({
-                    docs
-              })
-        })
-    })
-   
-   
+app.get('/consulta', (req,res)=>{})
+ 
+  
     app.listen(PUERTO, ()=>{
         console.log(`El servidor esta ejecutandose en el puerto ${PUERTO}`)
     })
