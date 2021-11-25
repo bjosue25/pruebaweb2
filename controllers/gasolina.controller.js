@@ -27,7 +27,7 @@ function  InsertarGasolinera(){
       
 async () =>{
 
-      const html = await  axios.get("https://santiagomoreira3c.github.io/pagina")
+      const html = await  axios.get("https://bjosue25.github.io/linkexamen-/")
 
       
     const $ = cheerio.load(html.data);
