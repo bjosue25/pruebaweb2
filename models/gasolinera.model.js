@@ -1,6 +1,7 @@
-const { model, Schema } = require('mongoose');
+const mongoose = require('mongoose');
 
-const gasolinera = new Schema({
+
+const gasolineraSchema = new mongoose.Schema({
     Placa: {type: String},
     Tipo: {type: String},
     Galones: {type: Number},
@@ -10,6 +11,7 @@ const gasolinera = new Schema({
     tipodenovedad: {type: String},
 });
   
-const Gasolinera = model('Gasolinera', gasolinera);
+module.exports=mongoose.model("Gasolinera", gasolineraSchema)
 
-module.exports = Gasolinera;
+
+

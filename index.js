@@ -16,9 +16,12 @@ const app = express();
 
 PUERTO = 5050
 
-app.use(express.json());
 
+app.use(cors()).use(express.json());
 
+app.set('view engine', 'ejs');
+
+ app.use('/', require('./router'));
 
 mongoose.connect(MONGO_URI, { useNewUrlParser:true, useUnifiedTopology:true }, 
       (err, res) => {
@@ -36,25 +39,26 @@ async function cargarVariables() {
 
 cargarVariables();
 
+/////
+// app.post('/', (req,res)=>{    
+//       cargarVariables();
+//       res.status(200).send({
+//           mensaje:"se guardo ",
+//           respuesta: body
+//       });
+//   })
 
-app.post('/', (req,res)=>{    
-      cargarVariables();
-      res.status(200).send({
-          mensaje:"se guardo ",
-          respuesta: body
-      });
-  })
 
-  app.get('/consulta', (req, res)=>{
-      Gasolinera.find({},(error,docs)=>{
-          res.send({
-            
-        
-          })
-      })     
-  });
- 
+
   
     app.listen(PUERTO, ()=>{
         console.log(`El servidor esta ejecutandose en el puerto ${PUERTO}`)
     })
+
+   
+
+
+
+
+
+
