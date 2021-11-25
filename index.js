@@ -45,7 +45,14 @@ app.post('/', (req,res)=>{
       });
   })
 
-app.get('/consulta', (req,res)=>{})
+  app.get('/consulta', (req, res)=>{
+      Gasolinera.find({},(error,docs)=>{
+          res.send({
+            
+        
+          })
+      })     
+  });
  
   
     app.listen(PUERTO, ()=>{
